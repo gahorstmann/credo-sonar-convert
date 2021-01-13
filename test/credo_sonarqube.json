@@ -1,0 +1,1 @@
+{ "issues" : [{"engineId":"","ruleId":"Test","severity":"MINOR","type":"CODE_SMELL","primaryLocation":{"message":"Test convert","filePath":"test/test.exs","textRange":{"startLine":6,"startColumn":5,"endColumn":30}}}]}
