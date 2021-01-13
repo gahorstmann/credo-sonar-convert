@@ -59,7 +59,7 @@ try {
   for(var k in json.issues) {
     var credo = json.issues[k];
     var issue = {
-      engineId: "",
+      engineId: credo.check,
       ruleId: credo.scope,
       severity: severity(credo.priority),
       type: type(credo.category),
