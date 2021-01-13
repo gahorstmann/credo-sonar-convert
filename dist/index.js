@@ -9,7 +9,6 @@ const core = __nccwpck_require__(186);
 var fs = __nccwpck_require__(747);
 
 function severity(item){
-  //console.log(item);
   var result;
   switch (true) {
     case (item >= 20):
@@ -68,8 +67,8 @@ try {
         filePath: credo.filename,
         textRange: {
           startLine: credo.line_no,
-          startColumn: credo.column-1,
-          endColumn: credo.column_end-1
+          startColumn: (credo.column-1),
+          endColumn: (redo.column_end-1)
         }
       }
     }

@@ -2,7 +2,6 @@ const core = require('@actions/core');
 var fs = require('fs');
 
 function severity(item){
-  //console.log(item);
   var result;
   switch (true) {
     case (item >= 20):
@@ -61,8 +60,8 @@ try {
         filePath: credo.filename,
         textRange: {
           startLine: credo.line_no,
-          startColumn: credo.column-1,
-          endColumn: credo.column_end-1
+          startColumn: (credo.column-1),
+          endColumn: (redo.column_end-1)
         }
       }
     }
