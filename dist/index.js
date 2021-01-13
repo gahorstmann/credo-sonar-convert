@@ -68,8 +68,8 @@ try {
         filePath: credo.filename,
         textRange: {
           startLine: credo.line_no,
-          startColumn: credo.column,
-          endColumn: credo.column_end
+          startColumn: credo.column-1,
+          endColumn: credo.column_end-1
         }
       }
     }
