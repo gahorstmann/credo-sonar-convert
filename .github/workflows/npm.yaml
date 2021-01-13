@@ -1,5 +1,9 @@
 name: "NPM Build and Test"
-on: push
+on:
+  push:
+    branches: [ 'main' ]
+  pull_request:
+    branches: [ 'main' ]
 
 jobs:
   npm:
@@ -35,8 +39,3 @@ jobs:
     #     github_token: ${{ secrets.GITHUB_TOKEN }}
     #     branch: ${{ github.ref }}
 
-    # - name: SonarCloud Scan
-    #   uses: SonarSource/sonarcloud-github-action@master
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-    #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
