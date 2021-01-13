@@ -41,15 +41,29 @@ function type(item){
 }
 
 try {
-  const inputfile = core.getInput('input-file');
-  const outputfile = core.getInput('output-file');
-  console.log(`Input: ${inputfile}!`);
-  console.log(`Output: ${outputfile}!`);
-  const filePath = process.env['GITHUB_WORKSPACE'] || '';
+  // const inputfile = core.getInput('input-file');
+  // const outputfile = core.getInput('output-file');
+  // console.log(`Input: ${inputfile}!`);
+  // console.log(`Output: ${outputfile}!`);
+  // const filePath = process.env['GITHUB_WORKSPACE'] || '';
+
+  //TEST LOCAL
+  var filePath = "./test";
+  var inputfile = "credo_result.json";
+  var outputfile = "credo_sonarqube.json";
+
   var json = require(filePath + "/" + inputfile);
   var out = '{ "issues" : ['
   for(var k in json.issues) {
     var credo = json.issues[k];
+    if(credo.column){
+      var startColumn = credo.column-1
+      var endColumn = credo.column_end-1
+    }else{
+      var startColumn = null
+      var endColumn = null
+    }
+
     var issue = {
       engineId: credo.check,
       ruleId: credo.scope,
@@ -60,8 +74,8 @@ try {
         filePath: credo.filename,
         textRange: {
           startLine: credo.line_no,
-          startColumn: (credo.column-1),
-          endColumn: (credo.column_end-1)
+          startColumn: startColumn,
+          endColumn: endColumn
         }
       }
     }
