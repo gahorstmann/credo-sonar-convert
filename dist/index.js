@@ -68,7 +68,7 @@ try {
         textRange: {
           startLine: credo.line_no,
           startColumn: (credo.column-1),
-          endColumn: (redo.column_end-1)
+          endColumn: (credo.column_end-1)
         }
       }
     }
