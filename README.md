@@ -1,4 +1,6 @@
-![Test](https://github.com/gahorstmann/credo-sonar-convert/workflows/NPM%20Test/badge.svg)
+![NPM Build and Test](https://img.shields.io/github/workflow/status/gahorstmann/credo-sonar-convert/NPM%20Build%20and%20Test?label=Build%20and%20Test) 
+![Issues](https://img.shields.io/github/issues/gahorstmann/credo-sonar-convert?label=Issues) 
+![Issues](https://img.shields.io/github/stars/gahorstmann/credo-sonar-convert?label=Stars)
 
 # Action credo sonar convert 
 

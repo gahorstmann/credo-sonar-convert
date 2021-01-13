@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gahorstmann/credo.sonar.convert.git"
+    "url": "git+https://github.com/gahorstmann/credo-sonar-convert.git"
   },
   "bugs": {
-    "url": "https://github.com/gahorstmann/credo.sonar.convert/issues"
+    "url": "https://github.com/gahorstmann/credo-sonar-convert/issues"
   },
-  "homepage": "https://github.com/gahorstmann/credo.sonar.convert#readme",
+  "homepage": "https://github.com/gahorstmann/credo-sonar-convert#readme",
   "keywords": [
     "GitHub",
     "Actions",

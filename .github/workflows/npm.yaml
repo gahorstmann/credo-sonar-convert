@@ -13,9 +13,6 @@ jobs:
     - name: Run eslint
       run: npm run lint
 
-    - run: |
-        printenv
-
     - name: Run Package
       run: npm run package
 
