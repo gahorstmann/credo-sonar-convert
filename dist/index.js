@@ -48,18 +48,18 @@ function type(item){
 }
 
 try {
-  // const inputfile = core.getInput('input-file');
-  // const outputfile = core.getInput('output-file');
-  // console.log(`Input: ${inputfile}!`);
-  // console.log(`Output: ${outputfile}!`);
-  // const filePath = process.env['GITHUB_WORKSPACE'] || '';
+  const inputfile = core.getInput('input-file');
+  const outputfile = core.getInput('output-file');
+  console.log(`Input: ${inputfile}!`);
+  console.log(`Output: ${outputfile}!`);
+  const filePath = process.env['GITHUB_WORKSPACE'] || '';
 
   //TEST LOCAL
-  var filePath = "./test";
-  var inputfile = "credo_result.json";
-  var outputfile = "credo_sonarqube.json";
+  // var filePath = "./test";
+  // var inputfile = "credo_result.json";
+  // var outputfile = "credo_sonarqube.json";
 
-  var json = __nccwpck_require__(83);
+  var json = require(filePath + "/" + inputfile);
   var out = '{ "issues" : ['
   for(var k in json.issues) {
     var credo = json.issues[k];
@@ -494,14 +494,6 @@ function toCommandValue(input) {
 }
 exports.toCommandValue = toCommandValue;
 //# sourceMappingURL=utils.js.map
-
-/***/ }),
-
-/***/ 83:
-/***/ ((module) => {
-
-"use strict";
-module.exports = JSON.parse("{\"issues\":[{\"category\":\"design\",\"check\":\"Teste\",\"column\":null,\"column_end\":30,\"filename\":\"test/test.exs\",\"line_no\":6,\"message\":\"Test convert\",\"priority\":-9,\"scope\":\"Test\",\"trigger\":\"Test\"}]}");
 
 /***/ }),
 

@@ -41,16 +41,16 @@ function type(item){
 }
 
 try {
-  // const inputfile = core.getInput('input-file');
-  // const outputfile = core.getInput('output-file');
-  // console.log(`Input: ${inputfile}!`);
-  // console.log(`Output: ${outputfile}!`);
-  // const filePath = process.env['GITHUB_WORKSPACE'] || '';
+  const inputfile = core.getInput('input-file');
+  const outputfile = core.getInput('output-file');
+  console.log(`Input: ${inputfile}!`);
+  console.log(`Output: ${outputfile}!`);
+  const filePath = process.env['GITHUB_WORKSPACE'] || '';
 
   //TEST LOCAL
-  var filePath = "./test";
-  var inputfile = "credo_result.json";
-  var outputfile = "credo_sonarqube.json";
+  // var filePath = "./test";
+  // var inputfile = "credo_result.json";
+  // var outputfile = "credo_sonarqube.json";
 
   var json = require(filePath + "/" + inputfile);
   var out = '{ "issues" : ['
