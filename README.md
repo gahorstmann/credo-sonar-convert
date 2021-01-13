@@ -1,5 +1,7 @@
 ![NPM Build and Test](https://img.shields.io/github/workflow/status/gahorstmann/credo-sonar-convert/NPM%20Build%20and%20Test?label=Build%20and%20Test) 
-![Issues](https://img.shields.io/github/issues/gahorstmann/credo-sonar-convert?label=Issues) 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=gahorstmann_credo-sonar-convert&metric=alert_status)](https://sonarcloud.io/dashboard?id=gahorstmann_credo-sonar-convert) 
+![Issues](https://img.shields.io/github/issues/gahorstmann/credo-sonar-convert?label=Issues)  
+
 ![Issues](https://img.shields.io/github/stars/gahorstmann/credo-sonar-convert?label=Stars)
 
 # Action credo sonar convert 
