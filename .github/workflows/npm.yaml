@@ -21,19 +21,19 @@ jobs:
         input-file: 'test/credo_result.json'
         output-file: 'test/credo_sonarqube.json'
 
-    - name: Commit files
-      run: |
-        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git add test/credo_sonarqube.json
-        git add dist/index.js
-        git commit -m "Add changes"
+    # - name: Commit files
+    #   run: |
+    #     git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+    #     git config --local user.name "github-actions[bot]"
+    #     git add test/credo_sonarqube.json
+    #     git add dist/index.js
+    #     git commit -m "Add changes"
 
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
+    # - name: Push changes
+    #   uses: ad-m/github-push-action@master
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     branch: ${{ github.ref }}
 
     # - name: SonarCloud Scan
     #   uses: SonarSource/sonarcloud-github-action@master
