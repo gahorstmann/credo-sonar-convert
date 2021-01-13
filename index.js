@@ -50,50 +50,43 @@ try {
   //TEST LOCAL
   // var filePath = "./test";
   // var inputfile = "credo_result.json";
-  // var outputfile = "credo_sonarqube.json";
-
-  if (fs.existsSync(filePath + "/" + inputfile)) {
-    var json = require(filePath + "/" + inputfile);
-    var out = '{ "issues" : ['
-    for(var k in json.issues) {
-      var credo = json.issues[k];
-      if(credo.column){
-        var startColumn = credo.column-1
-        var endColumn = credo.column_end-1
-      }else{
-        startColumn = null
-        endColumn = null
-      }
-
-      var issue = {
-        engineId: credo.check,
-        ruleId: credo.scope,
-        severity: severity(credo.priority),
-        type: type(credo.category),
-        primaryLocation: {
-          message: credo.message,
-          filePath: credo.filename,
-          textRange: {
-            startLine: credo.line_no,
-            startColumn: startColumn,
-            endColumn: endColumn
-          }
+  var json = require(filePath + "/" + inputfile);
+  var out = '{ "issues" : ['
+  for(var k in json.issues) {
+    var credo = json.issues[k];
+    if(credo.column){
+      var startColumn = credo.column-1
+      var endColumn = credo.column_end-1
+    }else{
+      startColumn = null
+      endColumn = null
+    }
+    var issue = {
+      engineId: credo.check,
+      ruleId: credo.scope,
+      severity: severity(credo.priority),
+      type: type(credo.category),
+      primaryLocation: {
+        message: credo.message,
+        filePath: credo.filename,
+        textRange: {
+          startLine: credo.line_no,
+          startColumn: startColumn,
+          endColumn: endColumn
         }
       }
-      var jsonString= JSON.stringify(issue);
-      out = out + jsonString + ','
     }
-    out = out.slice(0, -1) + ']}'
-    var obj = JSON.parse(out);
-    console.log(obj)
-
-    fs.writeFile(filePath + "/" + outputfile, out, function (err) {
-      if (err) throw err;
-      console.log("File "+ outputfile + " generated!");
-    });
-  }else{
-    core.setFailed("File " + inputfile + " not exist!");
+    var jsonString= JSON.stringify(issue);
+    out = out + jsonString + ','
   }
+  out = out.slice(0, -1) + ']}'
+  var obj = JSON.parse(out);
+  console.log(obj)
+
+  fs.writeFile(filePath + "/" + outputfile, out, function (err) {
+    if (err) throw err;
+    console.log("File "+ outputfile + " generated!");
+  });
 } catch (error) {
   core.setFailed(error.message);
 }
