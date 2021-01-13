@@ -1,0 +1,18 @@
+name: 'Credo Sonar Convert'
+description: 'Convert credo result json in format generic Sonarqube'
+author: 'gahorstmann'
+inputs:
+  input-file:
+    description: 'Credo result file'
+    required: true
+    default: 'credo-result.json'
+  output-file:
+    description: 'File where the conversion will be saved'
+    required: true
+    default: 'credo-sonarqube.json'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: 'align-center'
+  color: 'blue'

@@ -1,0 +1,32 @@
+{
+  "name": "credo-sonar-convert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.js -f json -o report.json",
+    "package": "ncc build index.js -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gahorstmann/credo.sonar.convert.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gahorstmann/credo.sonar.convert/issues"
+  },
+  "homepage": "https://github.com/gahorstmann/credo.sonar.convert#readme",
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "JavaScript"
+  ],
+  "author": "Gabriel Horstmann ",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.6"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.27.0",
+    "eslint": "^6.8.0"
+  }
+}

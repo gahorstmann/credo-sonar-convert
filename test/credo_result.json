@@ -1,0 +1,16 @@
+{
+  "issues": [
+    {
+      "category": "design",
+      "check": "Teste",
+      "column": 5,
+      "column_end": 30,
+      "filename": "test/test.exs",
+      "line_no": 6,
+      "message": "Test convert",
+      "priority": -9,
+      "scope": "Test",
+      "trigger": "Test"
+    }
+  ]
+}
