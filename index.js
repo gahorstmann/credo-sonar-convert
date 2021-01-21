@@ -16,9 +16,6 @@ function severity(item){
     case (item >= -10):
       result = "MINOR"
       break;
-    case (item >= -100):
-      result = "INFO"
-      break;
     default:
       result = "INFO"
   }
