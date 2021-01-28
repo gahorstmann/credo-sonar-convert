@@ -69,7 +69,7 @@ try {
       endColumn = null
     }
     var issue = {
-      engineId: credo.check,
+      engineId: "CREDO",
       ruleId: credo.scope,
       severity: severity(credo.priority),
       type: type(credo.category),
