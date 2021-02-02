@@ -38,9 +38,6 @@ function type(item){
     case "warnings":
       result = "BUG"
       break;
-    case "refactor":
-      result = "VULNERABILITY"
-      break;
     default:
       result = "CODE_SMELL"
   }
