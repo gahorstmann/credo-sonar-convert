@@ -24,7 +24,7 @@ Convert json generated in the `CREDO Elixir` to the Sonarqube format.
   run: |
     mix credo --strict --verbose --format json 2>&1 | tee credo_result.json
 
-- uses: gahorstmann/credo-sonar-convert@v1
+- uses: gahorstmann/credo-sonar-convert@main
   with:
     input-file: 'credo_result.json'
     output-file: 'credo_sonarqube.json'
