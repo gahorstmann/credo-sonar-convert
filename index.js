@@ -38,18 +38,16 @@ function type(item) {
 }
 
 try {
+
   const inputfile = core.getInput('input-file');
   const outputfile = core.getInput('output-file');
-  console.log(`Input: ${inputfile}!`);
-  console.log(`Output: ${outputfile}!`);
   const filePath = process.env['GITHUB_WORKSPACE'] || '';
 
+  console.log(`Input: ${inputfile}!`);
+  console.log(`Output: ${outputfile}!`);
+  
   var json = require(filePath + "/" + inputfile);
-  if (json.issues[0] == null) {
-    fs.copyFile(filePath + "/" + inputfile, filePath + "/" + outputfile, (err) => {
-      if (err) throw err;
-    });
-  } else {
+  if (json.issues.length > 0) {
     var out = '{ "issues" : ['
     for (var k in json.issues) {
       var credo = json.issues[k];
@@ -85,6 +83,11 @@ try {
     fs.writeFile(filePath + "/" + outputfile, out, function (err) {
       if (err) throw err;
       console.log("File " + outputfile + " generated!");
+    });
+    
+  } else {
+    fs.copyFile(filePath + "/" + inputfile, filePath + "/" + outputfile, (err) => {
+      if (err) throw err;
     });
   }
 } catch (error) {
