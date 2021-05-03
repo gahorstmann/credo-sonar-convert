@@ -11,6 +11,18 @@
       "priority": -9,
       "scope": "Test",
       "trigger": "Test"
+    },
+    {
+      "category": "refactor",
+      "check": "Credo.Check.Refactor.WithClauses",
+      "column": null,
+      "column_end": null,
+      "filename": "lib/test/callbacks/callback.ex",
+      "line_no": 10,
+      "message": "`with` contains only one <- clause and an `else` branch, use a `case` instead",
+      "priority": 12,
+      "scope": "",
+      "trigger": null
     }
   ]
 }

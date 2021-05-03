@@ -60,7 +60,7 @@ try {
       }
       var issue = {
         engineId: credo.check,
-        ruleId: credo.scope,
+        ruleId: credo.scope || credo.check,
         severity: severity(credo.priority),
         type: type(credo.category),
         primaryLocation: {
